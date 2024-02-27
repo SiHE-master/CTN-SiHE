@@ -1,6 +1,11 @@
 # CTN-SiHE
 
-conn.py：认证校园网的python脚本，用于被shell脚本调用
+环境部署：
+1.下载和火狐浏览器版本对应的驱动，把geckodriver这个驱动放到/usr/local/bin/目录下。
+2.安装selenium包
+
+
+conn.py：认证校园网的python脚本，用于被shell脚本调用，用户名和密码如果需要可以自己改
 
 conn.sh：主要的shell脚本，一个永远在跑的while循环，每次循环都会检测守护脚本conn_guard.sh是否存在进程，不存在就会拉起；除此之外，主要功能是通过ping外网的方式判断校园网有没有断开，如果断开就会调用conn.py去认证。如果网关ping不通还会重启网络管理。如果python路径有变化，请自行更改python的绝对路径。
 
